@@ -10,6 +10,11 @@ import java.util.Set;
 import cn.com.infcn.util.DbUtil;
 import cn.com.infcn.util.PropertiesUtil;
 
+/**
+ * 修改config.properties
+ * @author Administrator
+ *
+ */
 public class OneTest {
     public static void main(String[] args) {
         
