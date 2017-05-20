@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "dtd/log4j.dtd">
+<log4j:configuration xmlns:log4j='http://jakarta.apache.org/log4j/'>
+
+  <!-- 全局控制台打印监听 -->
+  <appender name="CONSOLE" class="org.apache.log4j.ConsoleAppender">
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern" value="[%-5p]%d{yyyy-MM-dd HH:mm:ss,sss} [%-60l]: %m%n" />
+    </layout>
+    <filter class="org.apache.log4j.varia.LevelRangeFilter">
+      <param name="LevelMin" value="DEBUG" />
+      <param name="LevelMax" value="FATAL" />
+    </filter>
+  </appender>
+
+  <!-- 日志打印 -->
+  <appender name="FileAppender" class="org.apache.log4j.DailyRollingFileAppender">
+    <param name="file" value="C:/log/System.log" />
+    <param name="DatePattern" value="'_'dd'.log'" />
+    <!-- <param name="DatePattern" value="'.'yyyy-MM-dd'.log'" /> -->
+    <param name="append" value="true" />
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern" value="[%-5p]%d{yyyy-MM-dd HH:mm:ss,sss} [%-60l]: %m%n" />
+    </layout>
+  </appender>
+
+  <category name="org.hibernate" additivity="false">
+    <level value="ERROR" />
+    <appender-ref ref="CONSOLE" />
+  </category>
+    <category name="org.hibernate.cfg" additivity="false">
+    <level value="ERROR" />
+    <appender-ref ref="CONSOLE" />
+  </category>
+
+  <category name="com.mchange.v2" additivity="false">
+    <level value="ERROR" />
+    <appender-ref ref="CONSOLE" />
+  </category>
+
+  <category name="org.springframework.ui" additivity="false">
+    <level value="INFO" />
+    <appender-ref ref="CONSOLE" />
+  </category>
+  <category name="org.springframework.transaction" additivity="false">
+    <level value="INFO" />
+    <appender-ref ref="CONSOLE" />
+  </category>
+  <category name="org.springframework.orm" additivity="false">
+    <level value="ERROR" />
+    <appender-ref ref="CONSOLE" />
+  </category>
+  <category name="org.springframework.core" additivity="false">
+    <level value="ERROR" />
+    <appender-ref ref="CONSOLE" />
+  </category>
+  <category name="org.springframework.aop" additivity="false">
+    <level value="INFO" />
+    <appender-ref ref="CONSOLE" />
+  </category>
+  <category name="org.springframework.context" additivity="false">
+    <level value="ERROR" />
+    <appender-ref ref="CONSOLE" />
+  </category>
+  <category name="org.springframework.beans" additivity="false">
+    <level value="ERROR" />
+    <appender-ref ref="CONSOLE" />
+  </category>
+  <category name="org.springframework.jndi" additivity="false">
+    <level value="INFO" />
+    <appender-ref ref="CONSOLE" />
+  </category>
+  <category name="org.springframework.cache" additivity="false">
+    <level value="ERROR" />
+    <appender-ref ref="CONSOLE" />
+  </category>
+  <category name="org.springframework.web" additivity="false">
+    <level value="INFO" />
+    <appender-ref ref="CONSOLE" />
+  </category>
+
+  <category name="cn.com.infcn" additivity="false">
+    <level value="DEBUG" />
+    <appender-ref ref="CONSOLE" />
+  </category>
+
+  <root>
+    <level value="DEBUG" />
+    <appender-ref ref="CONSOLE" />
+  </root>
+</log4j:configuration>
