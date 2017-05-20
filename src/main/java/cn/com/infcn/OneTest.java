@@ -12,6 +12,7 @@ import cn.com.infcn.util.PropertiesUtil;
 
 /**
  * 修改config.properties
+ * test
  * @author Administrator
  *
  */
